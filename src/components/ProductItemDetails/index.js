@@ -67,7 +67,7 @@ class ProductItemDetails extends Component {
     if (response.ok) {
       const fetchedData = await response.json()
       const updatedData = this.getFormattedData(fetchedData)
-      const updatedSimilarProductsData = updatedData.similar_products.map(
+      const updatedSimilarProductsData = fetchedData.similar_products.map(
         eachSimilarProduct => this.getFormattedData(eachSimilarProduct),
       )
       this.setState({
